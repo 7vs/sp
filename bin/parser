@@ -1,0 +1,15 @@
+#!/usr/bin/env ruby
+
+# frozen_string_literal: true
+
+require_relative '../lib/parser'
+
+if ARGV.empty?
+  print "--- A file name with the logs is required --- i.e.:\n"
+  print "./parser webserver.log\n"
+  exit
+end
+
+FILE_PATH = ARGV[0]
+
+Parser.execute(file_name: FILE_PATH)
